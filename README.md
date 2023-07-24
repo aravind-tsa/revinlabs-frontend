@@ -1,1 +1,1 @@
-# revin-labs-react
+# revinlabs-frontend
