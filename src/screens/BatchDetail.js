@@ -26,6 +26,7 @@ export const BatchDetail =()=>{
       const [editId ,setEditId]=useState(-1);
   const[data,setData]=useState([]);
   const[items,setItems]=useState([]);
+    const[test,setTest]=useState([]);
     const { Formik } = formik;
     const navigate = useNavigate();
     const schema = yup.object().shape({
@@ -72,10 +73,8 @@ setEditId(id)
 }
 const handleUpdate=(values)=>{
   axios.put('http://localhost:3000/batches/'+editId,{id:editId,values:{uBatchno,ubatchSize,upacking,umfgdate,uexpdate,uretestdate,usample} })
-  .then(res => {
-    location.reload();
-    setEditId(-1);
-  }).catch(err=>console.log(err));
+  .then(res => setTest(res))
+  .catch(err=>console.log(err));
 }
   return(
     <div >
